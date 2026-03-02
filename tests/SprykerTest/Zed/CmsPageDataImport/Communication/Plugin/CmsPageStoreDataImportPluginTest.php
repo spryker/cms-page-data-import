@@ -32,9 +32,6 @@ class CmsPageStoreDataImportPluginTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function testImportImportsCmsPage(): void
     {
         $this->tester->ensureDatabaseTableCmsPageStoreIsEmpty();
@@ -53,9 +50,6 @@ class CmsPageStoreDataImportPluginTest extends Unit
         $this->tester->assertDatabaseTableCmsPageStoreContainsData();
     }
 
-    /**
-     * @return void
-     */
     public function testGetImportTypeReturnsTypeOfImporter(): void
     {
         $cmsPageStoreDataImportPlugin = new CmsPageStoreDataImportPlugin();

@@ -27,11 +27,6 @@ class PlaceholderExtractorStep implements DataImportStepInterface
         $this->placeholderNames = $attributeNames;
     }
 
-    /**
-     * @param \Spryker\Zed\DataImport\Business\Model\DataSet\DataSetInterface $dataSet
-     *
-     * @return void
-     */
     public function execute(DataSetInterface $dataSet): void
     {
         $localizedPlaceholder = [];

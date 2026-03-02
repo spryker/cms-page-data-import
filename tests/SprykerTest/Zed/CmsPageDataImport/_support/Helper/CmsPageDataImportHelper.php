@@ -14,9 +14,6 @@ use Propel\Runtime\Map\RelationMap;
 
 class CmsPageDataImportHelper extends Module
 {
-    /**
-     * @return void
-     */
     public function ensureDatabaseTableCmsPageIsEmpty(): void
     {
         $cmsPageQuery = $this->getCmsPageQuery();
@@ -24,12 +21,6 @@ class CmsPageDataImportHelper extends Module
         $this->cleanTableRelations($cmsPageQuery);
     }
 
-    /**
-     * @param \Propel\Runtime\ActiveQuery\ModelCriteria $query
-     * @param array $processedEntities
-     *
-     * @return void
-     */
     protected function cleanTableRelations(ModelCriteria $query, array $processedEntities = []): void
     {
         $relations = $query->getTableMap()->getRelations();
@@ -47,18 +38,12 @@ class CmsPageDataImportHelper extends Module
         $query->deleteAll();
     }
 
-    /**
-     * @return void
-     */
     public function assertDatabaseTableCmsPageContainsData(): void
     {
         $cmsPageQuery = $this->getCmsPageQuery();
         $this->assertTrue(($cmsPageQuery->count() > 0), 'Expected at least one entry in the database table but database table is empty.');
     }
 
-    /**
-     * @return \Orm\Zed\Cms\Persistence\SpyCmsPageQuery
-     */
     protected function getCmsPageQuery(): SpyCmsPageQuery
     {
         return SpyCmsPageQuery::create();

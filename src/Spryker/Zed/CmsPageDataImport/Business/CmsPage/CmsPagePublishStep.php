@@ -21,19 +21,11 @@ class CmsPagePublishStep extends PublishAwareStep implements DataImportStepInter
      */
     protected $cmsFacade;
 
-    /**
-     * @param \Spryker\Zed\CmsPageDataImport\Dependency\Facade\CmsPageDataImportToCmsFacadeInterface $cmsFacade
-     */
     public function __construct(CmsPageDataImportToCmsFacadeInterface $cmsFacade)
     {
         $this->cmsFacade = $cmsFacade;
     }
 
-    /**
-     * @param \Spryker\Zed\DataImport\Business\Model\DataSet\DataSetInterface $dataSet
-     *
-     * @return void
-     */
     public function execute(DataSetInterface $dataSet): void
     {
         $cmsVersionTransfer = $this->cmsFacade->publishWithVersion($dataSet[CmsPageStoreDataSet::ID_CMS_PAGE]);

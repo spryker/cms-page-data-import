@@ -32,9 +32,6 @@ class CmsPageDataImportPluginTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function testImportImportsCmsPage(): void
     {
         $dataImporterReaderConfigurationTransfer = new DataImporterReaderConfigurationTransfer();
@@ -51,9 +48,6 @@ class CmsPageDataImportPluginTest extends Unit
         $this->tester->assertDatabaseTableCmsPageContainsData();
     }
 
-    /**
-     * @return void
-     */
     public function testGetImportTypeReturnsTypeOfImporter(): void
     {
         $cmsPageDataImportPlugin = new CmsPageDataImportPlugin();

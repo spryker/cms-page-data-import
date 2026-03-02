@@ -21,11 +21,6 @@ class CmsPageDataImportDependencyProvider extends DataImportDependencyProvider
      */
     public const FACADE_CMS = 'cms facade';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideBusinessLayerDependencies(Container $container): Container
     {
         $container = parent::provideBusinessLayerDependencies($container);
@@ -35,11 +30,6 @@ class CmsPageDataImportDependencyProvider extends DataImportDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCmsFacade(Container $container): Container
     {
         $container->set(static::FACADE_CMS, function (Container $container) {

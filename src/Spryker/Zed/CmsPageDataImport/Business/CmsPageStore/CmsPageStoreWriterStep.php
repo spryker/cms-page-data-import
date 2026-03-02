@@ -19,11 +19,6 @@ class CmsPageStoreWriterStep implements DataImportStepInterface
      */
     public const BULK_SIZE = 100;
 
-    /**
-     * @param \Spryker\Zed\DataImport\Business\Model\DataSet\DataSetInterface $dataSet
-     *
-     * @return void
-     */
     public function execute(DataSetInterface $dataSet): void
     {
         (new SpyCmsPageStoreQuery())

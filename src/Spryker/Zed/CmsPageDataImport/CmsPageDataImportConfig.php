@@ -46,9 +46,6 @@ class CmsPageDataImportConfig extends DataImportConfig
         return $this->buildImporterConfiguration($moduleDataImportDirectory . 'cms_page_store.csv', static::IMPORT_TYPE_CMS_PAGE_STORE);
     }
 
-    /**
-     * @return string
-     */
     protected function getModuleRoot(): string
     {
         $moduleRoot = realpath(
@@ -62,9 +59,6 @@ class CmsPageDataImportConfig extends DataImportConfig
         return $moduleRoot . DIRECTORY_SEPARATOR;
     }
 
-    /**
-     * @return string
-     */
     protected function getModuleDataImportDirectory(): string
     {
         return $this->getModuleRoot() . 'data' . DIRECTORY_SEPARATOR . 'import' . DIRECTORY_SEPARATOR;

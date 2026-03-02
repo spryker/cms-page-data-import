@@ -75,43 +75,26 @@ class CmsPageDataImportBusinessFactory extends DataImportBusinessFactory
         return $dataImporter;
     }
 
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImportStep\DataImportStepInterface
-     */
     protected function createStoreNameToIdStoreStep(): DataImportStepInterface
     {
         return new StoreNameToIdStoreStep();
     }
 
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImportStep\DataImportStepInterface
-     */
     protected function createCmsPageKeyToIdCmsPageStep(): DataImportStepInterface
     {
         return new CmsPageKeyToIdCmsPageStep();
     }
 
-    /**
-     * @param array $defaultPlaceholder
-     *
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImportStep\DataImportStepInterface
-     */
     protected function createPlaceholderExtractorStep(array $defaultPlaceholder = []): DataImportStepInterface
     {
         return new PlaceholderExtractorStep($defaultPlaceholder);
     }
 
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImportStep\DataImportStepInterface
-     */
     protected function createCmsPagePublishStep(): DataImportStepInterface
     {
         return new CmsPagePublishStep($this->getCmsFacade());
     }
 
-    /**
-     * @return \Spryker\Zed\CmsPageDataImport\Dependency\Facade\CmsPageDataImportToCmsFacadeInterface
-     */
     public function getCmsFacade(): CmsPageDataImportToCmsFacadeInterface
     {
         return $this->getProvidedDependency(CmsPageDataImportDependencyProvider::FACADE_CMS);

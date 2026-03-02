@@ -77,13 +77,6 @@ class CmsPageWriterStep extends PublishAwareStep implements DataImportStepInterf
         }
     }
 
-    /**
-     * @param \Orm\Zed\Cms\Persistence\SpyCmsPage $cmsPageEntity
-     * @param int $idLocale
-     * @param array $attributes
-     *
-     * @return void
-     */
     protected function addCmsPageLocalizedAttributes(SpyCmsPage $cmsPageEntity, int $idLocale, array $attributes): void
     {
         $localizedAttributesEntity = SpyCmsPageLocalizedAttributesQuery::create()
@@ -98,13 +91,6 @@ class CmsPageWriterStep extends PublishAwareStep implements DataImportStepInterf
         }
     }
 
-    /**
-     * @param \Orm\Zed\Cms\Persistence\SpyCmsPage $cmsPageEntity
-     * @param int $idLocale
-     * @param array $attributes
-     *
-     * @return void
-     */
     protected function addCmsPageUrl(SpyCmsPage $cmsPageEntity, int $idLocale, array $attributes): void
     {
         $urlEntity = SpyUrlQuery::create()
@@ -122,14 +108,6 @@ class CmsPageWriterStep extends PublishAwareStep implements DataImportStepInterf
         $this->addPublishEvents(UrlEvents::URL_PUBLISH, $urlEntity->getIdUrl());
     }
 
-    /**
-     * @param string $key
-     * @param \Orm\Zed\Cms\Persistence\SpyCmsPage $cmsPageEntity
-     * @param int $idLocale
-     * @param string $value
-     *
-     * @return void
-     */
     protected function addCmsPageGlossary(string $key, SpyCmsPage $cmsPageEntity, int $idLocale, string $value): void
     {
         $uniquePlaceholder = $key . '-' . $cmsPageEntity->getIdCmsPage();
