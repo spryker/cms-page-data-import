@@ -13,11 +13,15 @@ use Spryker\Zed\DataImport\DataImportConfig;
 class CmsPageDataImportConfig extends DataImportConfig
 {
     /**
+     * @api
+     *
      * @var string
      */
     public const IMPORT_TYPE_CMS_PAGE = 'cms-page';
 
     /**
+     * @api
+     *
      * @var string
      */
     public const IMPORT_TYPE_CMS_PAGE_STORE = 'cms-page-store';
